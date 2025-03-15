@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto1anddyprendasmatarrita604830418.MenuScreenController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1200.0">
+         <image>
+            <Image url="@../../../images/PrimaryMenu.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="PlayButton" layoutX="555.0" layoutY="329.0" mnemonicParsing="false" onAction="#playAndSelectMode" prefHeight="27.0" prefWidth="90.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Jugar" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="19.0" />
+         </font></Button>
+      <Label fx:id="NavalBattleLabel" layoutX="495.0" layoutY="28.0" prefHeight="41.0" prefWidth="211.0" style="-fx-background-color: black;" text="Batalla Naval" textFill="RED">
+         <font>
+            <Font name="Calibri Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="creditsButton" layoutX="550.0" layoutY="375.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Créditos" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="551.0" layoutY="422.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Salir" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
