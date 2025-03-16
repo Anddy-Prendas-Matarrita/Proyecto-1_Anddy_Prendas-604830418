@@ -23,12 +23,12 @@
             <Font name="Calibri Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="creditsButton" layoutX="550.0" layoutY="375.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Créditos" textFill="WHITE">
+      <Button fx:id="creditsButton" layoutX="550.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchToCreditsScreen" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Créditos" textFill="WHITE">
          <font>
             <Font name="Calibri Bold Italic" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="exitButton" layoutX="551.0" layoutY="422.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Salir" textFill="WHITE">
+      <Button fx:id="exitButton" layoutX="551.0" layoutY="422.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="36.0" prefWidth="100.0" style="-fx-border-color: black; -fx-background-color: blue;" text="Salir" textFill="WHITE">
          <font>
             <Font name="Calibri Bold Italic" size="19.0" />
          </font>

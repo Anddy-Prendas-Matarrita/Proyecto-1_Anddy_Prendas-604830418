@@ -10,4 +10,12 @@ public class MenuScreenController {
     private void playAndSelectMode() throws IOException {
         App.setRoot("SelectModeScreen");
     }
+     @FXML
+    private void switchToCreditsScreen() throws IOException {
+        App.setRoot("CreditsScreen");
+    }
+    @FXML
+     private void exitApp() throws IOException {
+     System.exit(0);
+    }
 }

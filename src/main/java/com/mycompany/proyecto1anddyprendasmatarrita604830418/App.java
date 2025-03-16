@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import javafx.scene.control.TextField;
 import java.io.IOException;
 
 /**
@@ -17,9 +17,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("MenuScreen"), 1200, 750);
-        stage.setScene(scene);
-        stage.setTitle("Batalla naval");
+        scene = new Scene(loadFXML("MenuScreen"), 1200, 750);//se crea la escena con sus demensiones de 1200 y 750
+        stage.setScene(scene); //se agrega la escena al stage
+        stage.setTitle("Batalla naval"); //se agrega un nombre a la ventana 
         stage.show();
     }
 
