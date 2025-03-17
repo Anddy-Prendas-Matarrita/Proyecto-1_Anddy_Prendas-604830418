@@ -14,6 +14,7 @@ public class Destroyer extends Vessel {
     public Destroyer(){
     }
     public Destroyer(int lifePart){
+        vesselType="Destroyer";
         for(int i=0;i<2;i++) {
             vesselPart[i].setLife(lifePart);
         }

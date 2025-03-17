@@ -9,7 +9,7 @@ package com.mycompany.proyecto1anddyprendasmatarrita604830418;
  * @author Anddy Prendas
  */
 public class Game {
-    Match match;
+    private Match match;
     
     public Game(){
         

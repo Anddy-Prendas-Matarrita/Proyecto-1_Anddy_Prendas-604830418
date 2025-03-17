@@ -8,20 +8,34 @@ package com.mycompany.proyecto1anddyprendasmatarrita604830418;
  *
  * @author Anddy Prendas
  */
-public abstract class Player {
+public class Player {
       protected String name;
-    protected String playerType;
-    protected int turnsNumber=0; //Este es el número de turnos que lleva el jugador que inicia en 0.
-    protected boolean itIsMyTurn=false; //Este atributo bool, permite saber si es el turno del jugador o no.
-    protected Board myBoard;
-    protected Board enemyBoard;
+    private String playerType;
+    private int turnsNumber=0; //Este es el número de turnos que lleva el jugador que inicia en 0.
+    private boolean isMyTurn=false; //Este atributo bool, permite saber si es el turno del jugador o no.
+    private Board myBoard;
+    private Board enemyBoard;
     
     public Player(){}
-    public Player(String name,String playerType,int turnsNumber, Board myBoard, Board enemyBoard){
+    public Player(String name,String playerType, Board myBoard, Board enemyBoard){
         this.name=name;
         this.playerType=playerType;
-        this.turnsNumber=turnsNumber;
         this.myBoard=myBoard;
         this.enemyBoard=enemyBoard;
+    }
+    public void setName(String newName){
+        this.name=newName;
+    }
+    public void setMyBoard(Board newMyBoard){
+        this.myBoard=newMyBoard;
+    }
+    public void setEnemyBoard(Board newEnemyBoard){
+        this.enemyBoard=newEnemyBoard;
+    }
+    public void setPlayerType(String newType){
+        this.playerType=newType;
+    }
+    public void setIsMyTurn(boolean newMyTurn){
+        this.isMyTurn=newMyTurn;
     }
 }

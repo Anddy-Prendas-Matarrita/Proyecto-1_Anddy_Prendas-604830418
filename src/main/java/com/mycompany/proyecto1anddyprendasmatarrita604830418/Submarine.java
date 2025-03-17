@@ -14,6 +14,7 @@ public class Submarine extends Vessel {
     public Submarine(){
     }
     public Submarine(int lifePart){
+        vesselType="Submarine";
         vesselPart[0].setLife(lifePart);
     }
     public void updateState(){
@@ -35,4 +36,5 @@ public class Submarine extends Vessel {
             }
         return false;
     }
+    
     }

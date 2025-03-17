@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.mycompany.proyecto1anddyprendasmatarrita604830418.EasyMatchScreenController">
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto1anddyprendasmatarrita604830418.EasyMatchScreenController">
    <children>
       <SplitPane dividerPositions="0.5" layoutY="-11.0" orientation="VERTICAL" prefHeight="750.0" prefWidth="1200.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="1224.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="1224.0" style="-fx-background-color: lightBlue;">
                <children>
-                  <GridPane fx:id="player1Board" prefHeight="404.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="618.0" AnchorPane.topAnchor="0.0">
+                  <GridPane fx:id="player1Board" layoutY="6.0" prefHeight="365.0" prefWidth="597.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="601.0" AnchorPane.topAnchor="6.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="74.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="78.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="78.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="78.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="76.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="81.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="69.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,11 +39,66 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                   </GridPane>
+                  <Label layoutX="856.0" layoutY="19.0" prefHeight="28.0" prefWidth="101.0" text="Jugador 1">
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="983.0" layoutY="72.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="989.0" layoutY="134.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="997.0" layoutY="189.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="1007.0" layoutY="247.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="1007.0" layoutY="299.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="856.0" layoutY="299.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="848.0" layoutY="247.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="840.0" layoutY="189.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="832.0" layoutY="134.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="823.0" layoutY="72.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1194.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1194.0" style="-fx-background-color: lightBlue;">
                <children>
-                  <GridPane fx:id="player2Board" layoutX="631.0" prefHeight="378.0" prefWidth="573.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="631.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                  <GridPane fx:id="player2Board" layoutX="596.0" layoutY="1.0" prefHeight="371.0" prefWidth="604.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="596.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="1.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,7 +120,62 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
-                  <Button fx:id="placeBoards" layoutX="169.0" layoutY="131.0" mnemonicParsing="false" onAction="#generateBoards" text="PlaceBoards" />
+                  <Button fx:id="placeBoards" layoutX="504.0" layoutY="2.0" mnemonicParsing="false" onAction="#generateBoards" text="Colocar Barcos" />
+                  <Label layoutX="186.0" layoutY="14.0" text="Jugador 2">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="-3.0" layoutY="45.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutY="97.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutY="160.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="6.0" layoutY="222.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="6.0" layoutY="274.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="158.0" layoutY="284.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="170.0" layoutY="222.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="170.0" layoutY="170.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="178.0" layoutY="118.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="186.0" layoutY="53.0">
+                     <image>
+                        <Image url="@../../../images/Destroyer.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
         </items>

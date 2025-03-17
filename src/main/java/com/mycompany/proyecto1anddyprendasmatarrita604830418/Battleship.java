@@ -14,6 +14,7 @@ public class Battleship extends Vessel{
     public Battleship(){
     }
     public Battleship(int lifePart){
+        vesselType="BattleShip";
         for(int i=0;i<4;i++) {
             vesselPart[i].setLife(lifePart);
         }

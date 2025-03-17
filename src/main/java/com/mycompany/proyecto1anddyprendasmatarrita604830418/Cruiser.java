@@ -14,6 +14,7 @@ public class Cruiser extends Vessel{
     public Cruiser(){
     }
     public Cruiser(int lifePart){
+        vesselType="Cruiser";
         for(int i=0;i<2;i++) {
             vesselPart[i].setLife(lifePart);
         }
