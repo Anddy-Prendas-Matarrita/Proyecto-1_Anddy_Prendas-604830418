@@ -63,12 +63,12 @@ public class Board {
             Vessel submarine2=new Submarine(modeLife);
             Vessel submarine3=new Submarine(modeLife);
             Vessel submarine4=new Submarine(modeLife);
-            Vessel destroyer1=new Submarine(modeLife);
-            Vessel destroyer2=new Submarine(modeLife);
-            Vessel destroyer3=new Submarine(modeLife);
-            Vessel cruiser1=new Submarine(modeLife);
-            Vessel cruiser2=new Submarine(modeLife);
-            Vessel battleShip1=new Submarine(modeLife);
+            Vessel destroyer1=new Destroyer(modeLife);
+            Vessel destroyer2=new Destroyer(modeLife);
+            Vessel destroyer3=new Destroyer(modeLife);
+            Vessel cruiser1=new Cruiser(modeLife);
+            Vessel cruiser2=new Cruiser(modeLife);
+            Vessel battleShip1=new Battleship(modeLife);
             myVesselList[0]=submarine1;
             myVesselList[1]=submarine2;
             myVesselList[2]=submarine3;
@@ -93,12 +93,42 @@ public class Board {
             Vessel submarine2=new Submarine(modeLife);
             Vessel submarine3=new Submarine(modeLife);
             Vessel submarine4=new Submarine(modeLife);
-            Vessel destroyer1=new Submarine(modeLife);
-            Vessel destroyer2=new Submarine(modeLife);
-            Vessel destroyer3=new Submarine(modeLife);
-            Vessel cruiser1=new Submarine(modeLife);
-            Vessel cruiser2=new Submarine(modeLife);
-            Vessel battleShip1=new Submarine(modeLife);
+            Vessel destroyer1=new Destroyer(modeLife);
+            Vessel destroyer2=new Destroyer(modeLife);
+            Vessel destroyer3=new Destroyer(modeLife);
+            Vessel cruiser1=new Cruiser(modeLife);
+            Vessel cruiser2=new Cruiser(modeLife);
+            Vessel battleShip1=new Battleship(modeLife);
+            myVesselList[0]=submarine1;
+            myVesselList[1]=submarine2;
+            myVesselList[2]=submarine3;
+            myVesselList[3]=submarine4;
+            myVesselList[4]=destroyer1;
+            myVesselList[5]=destroyer2;
+            myVesselList[6]=destroyer3;
+            myVesselList[7]=cruiser1;
+            myVesselList[8]=cruiser2;
+            myVesselList[9]=battleShip1;
+        }
+        else{
+            board=new char[11][11];
+            for(int f=0;f<11;f++){
+
+                for(int c=0;c<11;c++){
+                    board[f][c]='M';
+                }
+            }
+            modeLife=1; //En la dificultad difícil, cada parte de embarcación tendrá 3 vidas (se dañará esa parte de tres disparos)
+            Vessel submarine1=new Submarine(modeLife);
+            Vessel submarine2=new Submarine(modeLife);
+            Vessel submarine3=new Submarine(modeLife);
+            Vessel submarine4=new Submarine(modeLife);
+            Vessel destroyer1=new Destroyer(modeLife);
+            Vessel destroyer2=new Destroyer(modeLife);
+            Vessel destroyer3=new Destroyer(modeLife);
+            Vessel cruiser1=new Cruiser(modeLife);
+            Vessel cruiser2=new Cruiser(modeLife);
+            Vessel battleShip1=new Battleship(modeLife);
             myVesselList[0]=submarine1;
             myVesselList[1]=submarine2;
             myVesselList[2]=submarine3;
@@ -111,5 +141,9 @@ public class Board {
             myVesselList[9]=battleShip1;
         }
     }
+    public Vessel getVessel(int num){
+    return myVesselList[num];
+    }
+    
 }
 

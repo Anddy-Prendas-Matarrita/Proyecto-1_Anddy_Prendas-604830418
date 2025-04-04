@@ -9,7 +9,7 @@ package com.mycompany.proyecto1anddyprendasmatarrita604830418;
  * @author Anddy Prendas
  */
 public class Player {
-      protected String name;
+    private String name;
     private String playerType;
     private int turnsNumber=0; //Este es el número de turnos que lleva el jugador que inicia en 0.
     private boolean isMyTurn=false; //Este atributo bool, permite saber si es el turno del jugador o no.
@@ -38,4 +38,10 @@ public class Player {
     public void setIsMyTurn(boolean newMyTurn){
         this.isMyTurn=newMyTurn;
     }
+    public String getName(){
+        return this.name;
+    }
+    public Board getBoard(){
+        return myBoard;
+        }
 }

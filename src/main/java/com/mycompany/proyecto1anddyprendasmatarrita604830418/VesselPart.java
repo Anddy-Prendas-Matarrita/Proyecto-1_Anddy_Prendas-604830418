@@ -12,6 +12,9 @@ public class VesselPart {
     private int x;
     private int y;
     private boolean isDamaged = false;
+    public VesselPart(){
+        
+    }
     public VesselPart(int nLife, int nX, int nY){
         life=nLife;
         x=nX;

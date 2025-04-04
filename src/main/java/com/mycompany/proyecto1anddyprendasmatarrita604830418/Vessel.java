@@ -20,4 +20,5 @@ public abstract boolean searchAttackedPart(int x, int y);
 public String getVesselType(){
     return vesselType;
 }
+public abstract void setPositions(int x, int y, int type);
 }

@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -39,61 +37,25 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                   </GridPane>
-                  <Label layoutX="856.0" layoutY="19.0" prefHeight="28.0" prefWidth="101.0" text="Jugador 1">
+                  <Label fx:id="player1Label" layoutX="856.0" layoutY="19.0" prefHeight="28.0" prefWidth="101.0" text="Jugador 1">
                      <font>
                         <Font name="System Bold Italic" size="19.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="983.0" layoutY="72.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="989.0" layoutY="134.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="997.0" layoutY="189.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="1007.0" layoutY="247.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="1007.0" layoutY="299.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="856.0" layoutY="299.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="848.0" layoutY="247.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="840.0" layoutY="189.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="832.0" layoutY="134.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="823.0" layoutY="72.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="destroyer11" layoutX="846.0" layoutY="73.0" mnemonicParsing="false" onAction="#placeDestroyerl" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="destroyer12" layoutX="846.0" layoutY="125.0" mnemonicParsing="false" onAction="#placeDestroyer2" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="destroyer13" layoutX="846.0" layoutY="177.0" mnemonicParsing="false" onAction="#placeDestroyer3" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="submarine11" layoutX="779.0" layoutY="73.0" mnemonicParsing="false" onAction="#placeSubmarinel" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine12" layoutX="779.0" layoutY="125.0" mnemonicParsing="false" onAction="#placeSubmarine2" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine13" layoutX="779.0" layoutY="177.0" mnemonicParsing="false" onAction="#placeSubmarine3" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine14" layoutX="779.0" layoutY="232.0" mnemonicParsing="false" onAction="#placeSubmarine4" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="cruiser11" layoutX="936.0" layoutY="73.0" mnemonicParsing="false" onAction="#placeCruiserl" prefHeight="44.0" prefWidth="101.0" style="-fx-background-image: images/submarino.jpg;" text="crucero" />
+                  <Button fx:id="cruiser12" layoutX="936.0" layoutY="125.0" mnemonicParsing="false" onAction="#placeCruiser2" prefHeight="44.0" prefWidth="101.0" style="-fx-background-image: images/submarino.jpg;" text="crucero" />
+                  <Button fx:id="battleship11" layoutX="1048.0" layoutY="73.0" mnemonicParsing="false" onAction="#placeBattleship" prefHeight="44.0" prefWidth="128.0" style="-fx-background-image: images/submarino.jpg;" text="Acorazado" />
+                  <Button fx:id="editOnButton" layoutX="611.0" layoutY="345.0" mnemonicParsing="false" onAction="#startEditing" text="Colocar Barcos" textFill="#0400ff" />
+                  <Button fx:id="editOffButton" layoutX="598.0" layoutY="345.0" mnemonicParsing="false" text="Terminar de colocar" textFill="#1500ff" visible="false" />
+                  <Button fx:id="setPlayer1Button" layoutX="613.0" layoutY="308.0" mnemonicParsing="false" onAction="#setPlayer1Placing" text="Jugador 2 Colocando" textFill="RED" visible="false" />
+                  <Button fx:id="setPlayer2Button" layoutX="613.0" layoutY="308.0" mnemonicParsing="false" onAction="#setPlayer2Placing" text="Jugador 1 Colocando" textFill="RED" visible="false" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1194.0" style="-fx-background-color: lightBlue;">
@@ -120,62 +82,21 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
-                  <Button fx:id="placeBoards" layoutX="504.0" layoutY="2.0" mnemonicParsing="false" onAction="#generateBoards" text="Colocar Barcos" />
-                  <Label layoutX="186.0" layoutY="14.0" text="Jugador 2">
+                  <Label fx:id="player2Label" layoutX="186.0" layoutY="14.0" text="Jugador 2">
                      <font>
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="-3.0" layoutY="45.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutY="97.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutY="160.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="6.0" layoutY="222.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="6.0" layoutY="274.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="158.0" layoutY="284.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="170.0" layoutY="222.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="170.0" layoutY="170.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="178.0" layoutY="118.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="149.0" layoutX="186.0" layoutY="53.0">
-                     <image>
-                        <Image url="@../../../images/Destroyer.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="battleship21" layoutX="21.0" layoutY="57.0" mnemonicParsing="false" onAction="#placeBattleship" prefHeight="44.0" prefWidth="128.0" style="-fx-background-image: images/submarino.jpg;" text="Acorazado" />
+                  <Button fx:id="cruiser21" layoutX="156.0" layoutY="57.0" mnemonicParsing="false" onAction="#placeCruiserl" prefHeight="44.0" prefWidth="101.0" style="-fx-background-image: images/submarino.jpg;" text="crucero" />
+                  <Button fx:id="cruiser22" layoutX="156.0" layoutY="109.0" mnemonicParsing="false" onAction="#placeCruiser2" prefHeight="44.0" prefWidth="101.0" style="-fx-background-image: images/submarino.jpg;" text="crucero" />
+                  <Button fx:id="destroyer21" layoutX="266.0" layoutY="57.0" mnemonicParsing="false" onAction="#placeDestroyerl" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="destroyer22" layoutX="266.0" layoutY="109.0" mnemonicParsing="false" onAction="#placeDestroyer2" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="destroyer23" layoutX="266.0" layoutY="165.0" mnemonicParsing="false" onAction="#placeDestroyer3" prefHeight="44.0" prefWidth="81.0" style="-fx-background-image: images/submarino.jpg;" text="Destructor" />
+                  <Button fx:id="submarine21" layoutX="361.0" layoutY="57.0" mnemonicParsing="false" onAction="#placeSubmarinel" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine22" layoutX="361.0" layoutY="109.0" mnemonicParsing="false" onAction="#placeSubmarine2" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine23" layoutX="361.0" layoutY="165.0" mnemonicParsing="false" onAction="#placeSubmarine3" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
+                  <Button fx:id="submarine24" layoutX="361.0" layoutY="217.0" mnemonicParsing="false" onAction="#placeSubmarine4" prefHeight="44.0" prefWidth="53.0" style="-fx-background-image: images/submarino.jpg;" text="Submarino" />
                </children>
             </AnchorPane>
         </items>

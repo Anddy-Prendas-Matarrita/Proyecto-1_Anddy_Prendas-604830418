@@ -14,15 +14,17 @@ public class Cruiser extends Vessel{
     public Cruiser(){
     }
     public Cruiser(int lifePart){
+        
         vesselType="Cruiser";
-        for(int i=0;i<2;i++) {
+        for(int i=0;i<3;i++) {
+            vesselPart[i]=new VesselPart();
             vesselPart[i].setLife(lifePart);
         }
     }
     //Esta función actualiza el estado de la embarcación, si está hundido o no
     public void updateState(){
         int counter=0;
-        for(int i=0;i<2;i++) {
+        for(int i=0;i<3;i++) {
             if(vesselPart[i].getIsDamaged()==true){
                 counter=counter+1;
             }
@@ -36,7 +38,7 @@ public class Cruiser extends Vessel{
     //Esto permite que luego se pueda ajustar la vida de las partes de los barcos y funcione perfectamente.
     @Override
     public boolean searchAttackedPart(int x, int y){
-        for(int i=0;i<2;i++){
+        for(int i=0;i<3;i++){
             if (vesselPart[i].getX()==x && vesselPart[i].getY()==y){
                 vesselPart[i].receiveAttack(1);
                 if(vesselPart[i].getIsDamaged()==true) {
@@ -45,5 +47,20 @@ public class Cruiser extends Vessel{
             }
         }
         return false;
+    }
+    @Override
+    public void setPositions(int x, int y, int type){
+        if(type==1){
+        for(int i=0;i<3;i++){
+        vesselPart[i].setX(x+i);
+        vesselPart[i].setY(y);
+        }
+        }
+        else{
+        for(int i=0;i<3;i++){
+        vesselPart[i].setX(x);
+        vesselPart[i].setY(y+i);
+        }
+        }
     }
 }

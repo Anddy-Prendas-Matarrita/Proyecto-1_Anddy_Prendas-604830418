@@ -16,6 +16,7 @@ public class Battleship extends Vessel{
     public Battleship(int lifePart){
         vesselType="BattleShip";
         for(int i=0;i<4;i++) {
+            vesselPart[i]=new VesselPart();
             vesselPart[i].setLife(lifePart);
         }
     }
@@ -45,5 +46,20 @@ public class Battleship extends Vessel{
             }
         }
         return false;
+    }
+    @Override
+    public void setPositions(int x, int y, int type){
+        if(type==1){
+        for(int i=0;i<4;i++){
+        vesselPart[i].setX(x+i);
+        vesselPart[i].setY(y);
+        }
+        }
+        else{
+        for(int i=0;i<4;i++){
+        vesselPart[i].setX(x);
+        vesselPart[i].setY(y+i);
+        }
+        }
     }
 }
