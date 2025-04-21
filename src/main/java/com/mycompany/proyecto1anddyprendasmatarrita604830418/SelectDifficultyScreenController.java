@@ -18,10 +18,12 @@ public class SelectDifficultyScreenController {
      @FXML
     private void selectNormal() throws IOException {
         SelectModeScreenController.infoContainer.theMatch=new Match(2,SelectModeScreenController.infoContainer.getPlayer1(),SelectModeScreenController.infoContainer.getPlayer2());
+        App.setRoot("NormalMatchScreen");
     }
      @FXML
     private void selectHard() throws IOException {
         SelectModeScreenController.infoContainer.theMatch=new Match(3,SelectModeScreenController.infoContainer.getPlayer1(),SelectModeScreenController.infoContainer.getPlayer2());
+        App.setRoot("HardMatchScreen");
     }
     //Con esta función se toca un botón y se regresa a la pantalla de selección de modo de juego
      @FXML

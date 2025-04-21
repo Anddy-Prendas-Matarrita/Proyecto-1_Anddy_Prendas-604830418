@@ -9,17 +9,18 @@ package com.mycompany.proyecto1anddyprendasmatarrita604830418;
  * @author Anddy Prendas
  */
 public class Submarine extends Vessel {
-    private VesselPart vesselPart= new VesselPart();
+    private VesselPart[] vesselPart= new VesselPart[1];
 
     public Submarine(){
     }
     public Submarine(int lifePart){
+        vesselPart[0]=new VesselPart();
         vesselType="Submarine";
-        vesselPart.setLife(lifePart);
+        vesselPart[0].setLife(lifePart);
     }
     public void updateState(){
         //Esta función actualiza el estado de la embarcación, si está hundido o no
-            if(vesselPart.getIsDamaged()==true){
+            if(vesselPart[0].getIsDamaged()==true){
                 isFallen=true;
             }
     }
@@ -28,20 +29,25 @@ public class Submarine extends Vessel {
     //el barco recibirá el daño y retornará false, pero si también se detecta que el barco está hundido se retornará true.
     //Esto permite que luego se pueda ajustar la vida de las partes de los barcos y funcione perfectamente.
     public boolean searchAttackedPart(int x, int y){
-            if (vesselPart.getX()==x && vesselPart.getY()==y){
-                vesselPart.receiveAttack(1);
-                if(vesselPart.getIsDamaged()==true) {
+            if (vesselPart[0].getX()==x && vesselPart[0].getY()==y){
+                vesselPart[0].receiveAttack(1);
+                if(vesselPart[0].getIsDamaged()==true) {
                     return true;
                 }
             }
         return false;
     }
-    public VesselPart getVesselPart(){
+    @Override
+    public VesselPart[] getVesselPart(){
         return vesselPart;
     }
     @Override
     public void setPositions(int x, int y, int type){
-        vesselPart.setX(x);
-        vesselPart.setY(y);
+        vesselPart[0].setX(x);
+        vesselPart[0].setY(y);
+    }
+     @Override
+    public void setIsFallen(boolean isSunken){
+        isFallen=isSunken;
     }
     }

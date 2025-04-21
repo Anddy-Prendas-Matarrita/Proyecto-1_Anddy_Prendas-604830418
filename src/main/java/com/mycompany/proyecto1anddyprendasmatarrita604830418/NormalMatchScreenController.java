@@ -12,7 +12,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 
 
-public class EasyMatchScreenController {
+public class NormalMatchScreenController {
     @FXML 
     private Button showPcButton;
     @FXML 
@@ -93,8 +93,8 @@ public class EasyMatchScreenController {
     }
     //Esta función inicializa el tablero que se le introduzca por parametro y lo llena con imagenes de agua 
     public void setPlayerBoard(GridPane playerGrid){  
-        for(int f=0;f<8;f++){ // for para recorrer el tablero entero
-        for(int c=0;c<8;c++){
+        for(int f=0;f<12;f++){ // for para recorrer el tablero entero
+        for(int c=0;c<12;c++){
             Button button=new Button(); // Se le asigna un botón a cada casilla 
             button.setPrefSize(174, 129); // Se le asigna un tamaño a cada botón
             button.setStyle("-fx-background-image: url('images/Water.jpeg');-fx-border-color:black");
@@ -136,8 +136,8 @@ public class EasyMatchScreenController {
   int aux=0;
   while(aux<4){ //bucle para colocar los submarinos
       horizontalOvertical=(random.nextInt(2))+1; //se genera un numero entre 1 y 2 aleatorio para la orientacion del barco (horizontal o vertical)
-          randomX=random.nextInt(8);// se genera un numero aleatorio entre 0 y 7 para la posicion en x
-          randomY=random.nextInt(8);// se genera un numero aleatorio entre 0 y 7 para la posicion en y
+          randomX=random.nextInt(12);// se genera un numero aleatorio entre 0 y 7 para la posicion en x
+          randomY=random.nextInt(12);// se genera un numero aleatorio entre 0 y 7 para la posicion en y
           placeBoatsToZoneRandom(randomX,randomY,aux+1); // se llama la funcion que se encarga de colocar los barcos en el tablero y de forma logica, usando los numeor antes creados
           if(isValidToContinue==true){ //esta verifica si el barco fue realmente colocado o si no se coloco por salirse de los limites o por que ya habia un barco en esa posicion
               aux=aux+1;//se le suma a la variable para que avance, sino se coloco el barco, se repite hasta que se coloque
@@ -145,8 +145,8 @@ public class EasyMatchScreenController {
   }
    while(aux<7){//bucle para colocar los destructores
       horizontalOvertical=(random.nextInt(2))+1;
-          randomX=random.nextInt(8);
-          randomY=random.nextInt(8);
+          randomX=random.nextInt(12);
+          randomY=random.nextInt(12);
           placeBoatsToZoneRandom(randomX,randomY,aux+1);
           if(isValidToContinue==true){
               aux=aux+1;
@@ -154,8 +154,8 @@ public class EasyMatchScreenController {
   }
       while(aux<9){ //bucle para colocar los cruceros
       horizontalOvertical=(random.nextInt(2))+1;
-          randomX=random.nextInt(8);
-          randomY=random.nextInt(8);
+          randomX=random.nextInt(12);
+          randomY=random.nextInt(12);
           placeBoatsToZoneRandom(randomX,randomY,aux+1);
           if(isValidToContinue==true){
               aux=aux+1;
@@ -163,8 +163,8 @@ public class EasyMatchScreenController {
   }
       while(aux<10){ //bucle para colocar el acorazado
       horizontalOvertical=(random.nextInt(2))+1;
-          randomX=random.nextInt(8);
-          randomY=random.nextInt(8);
+          randomX=random.nextInt(12);
+          randomY=random.nextInt(12);
           placeBoatsToZoneRandom(randomX,randomY,aux+1);
           if(isValidToContinue==true){
               aux=aux+1;
@@ -180,8 +180,8 @@ public class EasyMatchScreenController {
         public void showPcBoard(){
             showPcButton.setVisible(false);
             hideButton.setVisible(true);
-            for(int a=0;a<8;a++){
-                            for(int b=0;b<8;b++){
+            for(int a=0;a<12;a++){
+                            for(int b=0;b<12;b++){
                               if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[a][b]=='S'){// se verifica si es un submarino para y poner el color rojo
                               Button button=new Button(); 
                               button.setPrefSize(174, 129); 
@@ -306,7 +306,7 @@ public class EasyMatchScreenController {
                         if (destroyerCounter<3){
                         
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -315,7 +315,7 @@ public class EasyMatchScreenController {
                         }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -330,7 +330,7 @@ public class EasyMatchScreenController {
                        if (destroyerCounter<3){
                         
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -339,7 +339,7 @@ public class EasyMatchScreenController {
                         }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -355,7 +355,7 @@ public class EasyMatchScreenController {
                         if (destroyerCounter<3){
                         
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -364,7 +364,7 @@ public class EasyMatchScreenController {
                         }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -379,7 +379,7 @@ public class EasyMatchScreenController {
                         if(cruiserCounter<2){
                         
                         if(horizontalOvertical==1){
-                           if(x<6){
+                           if(x<10){
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+2][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -388,7 +388,7 @@ public class EasyMatchScreenController {
                         }
                          }
                          else{
-                            if(y<6){
+                            if(y<10){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+2]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -403,7 +403,7 @@ public class EasyMatchScreenController {
                         if(cruiserCounter<2){
                         
                         if(horizontalOvertical==1){
-                           if(x<6){
+                           if(x<10){
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+2][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -412,7 +412,7 @@ public class EasyMatchScreenController {
                         }
                          }
                          else{
-                            if(y<6){
+                            if(y<10){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+2]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -427,7 +427,7 @@ public class EasyMatchScreenController {
                         if(battleshipCounter<1){
                         
                         if(horizontalOvertical==1){
-                          if(x<5 &&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+2][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+3][y]=='M'){
+                          if(x<9 &&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+2][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x+3][y]=='M'){
                               
                            SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                            battleshipCounter=battleshipCounter+1;
@@ -436,7 +436,7 @@ public class EasyMatchScreenController {
                          }
                         
                          else{
-                            if(y<5){
+                            if(y<9){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+2]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y+3]=='M'){   
                              SelectModeScreenController.infoContainer.getPlayerVessel1(numOfBoat-1).setPositions(x, y, horizontalOvertical);
                              battleshipCounter=battleshipCounter+1;
@@ -451,8 +451,8 @@ public class EasyMatchScreenController {
                             return;
                         }
                         //Aqui se rellena el gridpane dependiendo de las casillas y los barcos que la esten ocupando en la matriz char para mostrarlo graficamente
-                         for(int a=0;a<8;a++){
-                            for(int b=0;b<8;b++){
+                         for(int a=0;a<12;a++){
+                            for(int b=0;b<12;b++){
                               if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[a][b]=='S'){// se verifica si es un submarino para y poner el color rojo
                               Button button=new Button(); 
                               button.setPrefSize(174, 129); 
@@ -543,7 +543,7 @@ public class EasyMatchScreenController {
                         if (destroyerCounter<3){
                         
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -558,7 +558,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -578,7 +578,7 @@ public class EasyMatchScreenController {
                         if(randBoat==6){
                        if (destroyerCounter<3){
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -593,7 +593,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -614,7 +614,7 @@ public class EasyMatchScreenController {
                         if(randBoat==7){
                         if (destroyerCounter<3){
                          if(horizontalOvertical==1){
-                           if(x<7){//verifica que el barco no se vaya a salir de los limites de la matriz en x
+                           if(x<11){//verifica que el barco no se vaya a salir de los limites de la matriz en x
                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -629,7 +629,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                           if(y<7){//verifica que el barco no se vaya a salir de los limites de la matriz en y
+                           if(y<11){//verifica que el barco no se vaya a salir de los limites de la matriz en y
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            destroyerCounter=destroyerCounter+1;
@@ -650,7 +650,7 @@ public class EasyMatchScreenController {
                         if(cruiserCounter<2){
                         
                         if(horizontalOvertical==1){
-                           if(x<6){
+                           if(x<10){
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+2][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -665,7 +665,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                            if(y<6){
+                            if(y<10){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+2]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -685,7 +685,7 @@ public class EasyMatchScreenController {
                         if(randBoat==9){
                         if(cruiserCounter<2){
                         if(horizontalOvertical==1){
-                           if(x<6){
+                           if(x<10){
                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+2][y]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -700,7 +700,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                            if(y<6){
+                            if(y<10){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+2]=='M'){   
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            cruiserCounter=cruiserCounter+1;
@@ -720,7 +720,7 @@ public class EasyMatchScreenController {
                         if(randBoat==10){
                         if(battleshipCounter<1){
                         if(horizontalOvertical==1){
-                          if(x<5 &&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+2][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+3][y]=='M'){
+                          if(x<9 &&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+1][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+2][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x+3][y]=='M'){
                            SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                            battleshipCounter=battleshipCounter+1;
                            isValidToContinue=true;
@@ -730,7 +730,7 @@ public class EasyMatchScreenController {
                            }
                          }
                          else{
-                            if(y<5){
+                            if(y<9){
                              if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+1]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+2]=='M'&&SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y+3]=='M'){   
                              SelectModeScreenController.infoContainer.getPlayerVessel2(randBoat-1).setPositions(x, y, horizontalOvertical);
                              battleshipCounter=battleshipCounter+1;
@@ -751,8 +751,8 @@ public class EasyMatchScreenController {
                             return;
                         }
                         //Aqui se rellena el gridpane dependiendo de las casillas y los barcos que la esten ocupando en la matriz char para mostrarlo graficamente
-                         for(int a=0;a<8;a++){
-                            for(int b=0;b<8;b++){
+                         for(int a=0;a<12;a++){
+                            for(int b=0;b<12;b++){
                               if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[a][b]=='S'){// se verifica si es un submarino para y poner el color rojo
                               Button button=new Button(); 
                               button.setPrefSize(174, 129); 
@@ -822,8 +822,8 @@ public class EasyMatchScreenController {
     numOfBoat=10;
     }
     public void prepareGridToAttack1(){
-        for(int row=0;row<8;row++){
-          for(int column=0;column<8;column++){
+        for(int row=0;row<12;row++){
+          for(int column=0;column<12;column++){
             if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[row][column]=='F'){
             Button button=new Button(); // Se le asigna un botón a cada casilla 
             button.setPrefSize(174, 129); // Se le asigna un tamaño a cada botón
@@ -871,8 +871,8 @@ public class EasyMatchScreenController {
     }
     public boolean isWinnerDefined(char[][] matrix){
         int counter=0;
-        for(int i=0;i<8;i++){
-            for(int e=0;e<8;e++){
+        for(int i=0;i<12;i++){
+            for(int e=0;e<12;e++){
              if(matrix[i][e]=='F'){
                  counter++;
              }
@@ -887,8 +887,8 @@ public class EasyMatchScreenController {
     }
    
     public void prepareGridToAttack2(){
-        for(int row=0;row<8;row++){
-          for(int column=0;column<8;column++){
+        for(int row=0;row<12;row++){
+          for(int column=0;column<12;column++){
             if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[row][column]=='F'){
             Button button=new Button(); // Se le asigna un botón a cada casilla 
             button.setPrefSize(174, 129); // Se le asigna un tamaño a cada botón
@@ -953,43 +953,80 @@ public class EasyMatchScreenController {
                 for(int i=0;i<4;i++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[0].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[0].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[0].receiveAttack(1);
+                        if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[0].getIsDamaged()==true){
                         SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
-                        System.out.println("Toque! submarino PC");
+                       messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " ha hundido una embarcación");
+                        }
+                        else{
+                        System.out.println("Toque! submarino PLAYER");
                         messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " le ha dado a una embarcación");
+                        }
                       }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='D'){
+              int counter=0;
                 for(int i=4;i<7;i++){
                     for(int e=0;e<2;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
-                        System.out.println("Toque! destructor PC");
+                        for(int u=0;u<2;u++){
+                        if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[u].getIsDamaged()==true){
+                            counter++;
+                        }
+                        }
+                        if(counter==2){
+                          SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
+                          messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " ha hundido una embarcación");  
+                        }else{
+                        System.out.println("Toque! destructor PLAYER");
                         messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " le ha dado a una embarcación");
+                        }
                       }
                     }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='C'){
+               int counter=0;
                 for(int i=7;i<9;i++){
                     for(int e=0;e<3;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
-                        System.out.println("Toque! crucero PC");
+                        for(int u=0;u<3;u++){
+                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[i].getVesselPart()[u].getIsDamaged()==true){
+                                counter++;
+                            }
+                        }
+                        if(counter==3){
+                            SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
+                            messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " ha hundido una embarcación");
+                        }
+                        else{
+                        System.out.println("Toque! crucero PLAYER");
                         messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " le ha dado a una embarcación");
+                        }
                       }
                     }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]=='A'){
+                   int counter=0;
                     for(int e=0;e<4;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[9].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[9].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[9].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F'; 
-                        System.out.println("Toque! acorazado PC");
+                        for(int u=0;u<4;u++){
+                            if(SelectModeScreenController.infoContainer.getPlayerBoard2().getVeselList()[9].getVesselPart()[e].getIsDamaged()==true){
+                                counter++;
+                            }
+                        }
+                        if(counter==4){
+                            SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard()[x][y]='F';
+                            messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " ha hundido una embarcación");
+                        }
+                        else{
+                        System.out.println("Toque! acorazado PLAYER");
                         messagesText.setText(SelectModeScreenController.infoContainer.getPlayer1Name() + " le ha dado a una embarcación");
+                        }
                     }
                 }
             }
@@ -1004,7 +1041,15 @@ public class EasyMatchScreenController {
            prepareGridToAttack2();
         }
         public void getAttackPlayer1(){
-            
+            if(isWinnerDefined(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard())==true &&isWinnerDefined(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard())==true){
+                System.out.println("Empate");
+                prepareGridToAttack1();
+                prepareGridToAttack2();
+                winnerText.setText("Empate");
+                winnerText.setVisible(true);
+                returnMenuButton.setVisible(true);
+                return;
+            }
             if(isWinnerDefined(SelectModeScreenController.infoContainer.getPlayerBoard2().getCharBoard())==true){
                 winner=SelectModeScreenController.infoContainer.getPlayer1Name();
                 System.out.println(winner);
@@ -1027,49 +1072,86 @@ public class EasyMatchScreenController {
                 returnMenuButton.setVisible(true);
                 return;
             }
-            int x=random.nextInt(8);
-            int y=random.nextInt(8);
+            int x=random.nextInt(12);
+            int y=random.nextInt(12);
             if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='S'){
                 for(int i=0;i<4;i++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[0].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[0].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[0].receiveAttack(1);
+                        if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[0].getIsDamaged()==true){
                         SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                       messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " ha hundido una embarcación");
+                        }
+                        else{
                         System.out.println("Toque! submarino PLAYER");
                         messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " le ha dado a una embarcación");
+                        }
                       }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='D'){
+                int counter=0;
                 for(int i=4;i<7;i++){
                     for(int e=0;e<2;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                        for(int u=0;u<2;u++){
+                        if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[u].getIsDamaged()==true){
+                            counter++;
+                        }
+                        }
+                        if(counter==2){
+                          SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                          messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " ha hundido una embarcación");  
+                        }else{
                         System.out.println("Toque! destructor PLAYER");
                         messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " le ha dado a una embarcación");
+                        }
                       }
                     }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='C'){
+                int counter=0;
                 for(int i=7;i<9;i++){
                     for(int e=0;e<3;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                        for(int u=0;u<3;u++){
+                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[i].getVesselPart()[u].getIsDamaged()==true){
+                                counter++;
+                            }
+                        }
+                        if(counter==3){
+                            SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                            messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " ha hundido una embarcación");
+                        }
+                        else{
                         System.out.println("Toque! crucero PLAYER");
                         messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " le ha dado a una embarcación");
+                        }
                       }
                     }
                 }
             }
             else if(SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]=='A'){
+                int counter=0;
                     for(int e=0;e<4;e++){
                       if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[9].getVesselPart()[e].getX()==x && SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[9].getVesselPart()[e].getY()==y){
                         SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[9].getVesselPart()[e].receiveAttack(1);
-                        SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F'; 
+                        for(int u=0;u<4;u++){
+                            if(SelectModeScreenController.infoContainer.getPlayerBoard1().getVeselList()[9].getVesselPart()[e].getIsDamaged()==true){
+                                counter++;
+                            }
+                        }
+                        if(counter==4){
+                            SelectModeScreenController.infoContainer.getPlayerBoard1().getCharBoard()[x][y]='F';
+                            messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " ha hundido una embarcación");
+                        }
+                        else{
                         System.out.println("Toque! acorazado PLAYER");
                         messagesText1.setText(SelectModeScreenController.infoContainer.getPlayer2Name() + " le ha dado a una embarcación");
+                        }
                     }
                 }
             }

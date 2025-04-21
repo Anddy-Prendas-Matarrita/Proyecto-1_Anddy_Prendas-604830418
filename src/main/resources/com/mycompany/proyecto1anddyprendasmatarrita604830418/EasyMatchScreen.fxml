@@ -3,11 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto1anddyprendasmatarrita604830418.EasyMatchScreenController">
    <children>
@@ -56,6 +58,11 @@
                   <Button fx:id="editOffButton" layoutX="598.0" layoutY="345.0" mnemonicParsing="false" onAction="#endEditing" text="Terminar de colocar" textFill="#1500ff" visible="false" />
                   <Button fx:id="verticalButton" layoutX="633.0" layoutY="313.0" mnemonicParsing="false" onAction="#setHorizontal" text="Horizontal" visible="false" />
                   <Button fx:id="horizontalButton" layoutX="633.0" layoutY="313.0" mnemonicParsing="false" onAction="#setVertical" text="Vertical" visible="false" />
+                  <Text fx:id="messagesText" fill="RED" layoutX="796.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.13671875">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1194.0" style="-fx-background-color: lightBlue;">
@@ -87,9 +94,26 @@
                         <Font name="System Bold Italic" size="20.0" />
                      </font>
                   </Label>
+                  <Button fx:id="showPcButton" layoutY="336.0" mnemonicParsing="false" onAction="#showPcBoard" text="mostrar tablero de pc" visible="false" />
+                  <Button fx:id="hideButton" layoutX="24.0" layoutY="336.0" mnemonicParsing="false" onAction="#hidePcBoard" text="CONTINUAR" visible="false" />
+                  <Text fx:id="messagesText1" fill="RED" layoutX="66.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.13671875">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
+      <TextArea fx:id="winnerText" prefHeight="739.0" prefWidth="1200.0" visible="false">
+         <font>
+            <Font name="Comic Sans MS" size="72.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="returnMenuButton" layoutX="965.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="128.0" prefWidth="221.0" text="Volver al menu" visible="false">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

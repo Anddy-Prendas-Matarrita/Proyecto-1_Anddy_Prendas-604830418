@@ -21,5 +21,6 @@ public String getVesselType(){
     return vesselType;
 }
 public abstract void setPositions(int x, int y, int type);
-
+public abstract VesselPart[] getVesselPart();
+public abstract void setIsFallen(boolean isSunken);
 }

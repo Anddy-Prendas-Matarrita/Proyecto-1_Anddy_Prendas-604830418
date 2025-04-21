@@ -20,11 +20,6 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="PvPbutton" layoutX="519.0" layoutY="287.0" mnemonicParsing="false" onAction="#selectPlayerVsPlayer" style="-fx-background-color: blue; -fx-border-color: black;" text="Jugador vs Jugador" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="24.0" />
-         </font>
-      </Button>
       <Button fx:id="PvCbutton1" layoutX="503.0" layoutY="359.0" mnemonicParsing="false" onAction="#selectPlayerVsComputer" style="-fx-background-color: blue; -fx-border-color: black;" text="Jugador vs Computadora" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="25.0" />

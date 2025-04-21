@@ -63,4 +63,12 @@ public class Cruiser extends Vessel{
         }
         }
     }
+    @Override
+    public VesselPart[] getVesselPart(){
+        return vesselPart;
+    }
+     @Override
+    public void setIsFallen(boolean isSunken){
+        isFallen=isSunken;
+    }
 }
